@@ -59,11 +59,12 @@ app.get('/sign_up', function(req,res){
 app.post('/logincheck',function(req, res){
     var uid = req.body.id;
     var upw = req.body.pw;
-    var query = client.query('SELECT count(*) cnt FROM user WHERE u_email=? and u_pw=?',[uid,upw],function(err, rows){
+    var query = client.query('SELECT count(*) cnt, u_email FROM user WHERE u_email=? and u_pw=?',[uid,upw],function(err, rows){
        if(err)   console.error('err', err);
        var cnt = rows[0].cnt;
        if(cnt ===1 ){
-          res.send('<h1>login success</h1>'); 
+          res.send('<h1>'+rows[0].u_email+'  login success</h1>'); 
+          
         }else{ 
           res.send('<script> alert("id or password is wrong");history.back();</script>');
        }
@@ -108,5 +109,5 @@ app.post('/users',function(req,res){ 			//이거 ㄱㄱ
         console.log(query);
 
     });
-    res.send('<h1>'+uname+'님 환영합니다.</h1>'); 
+    res.send('<script>alert("'+uname+'님 환영합니다."); location.href="/";</script>');
 });
