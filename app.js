@@ -50,7 +50,7 @@ app.use(session({
 
 
 // all environments
-app.set('port', process.env.PORT || 3001);
+app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
@@ -483,6 +483,6 @@ app.post('/users',function(req,res){ 			//이거 ㄱㄱ
 
 
 
-var server = app.listen(3001, function(){
+var server = app.listen(3000, function(){
 	console.log("ingoo server");
 });
