@@ -260,8 +260,18 @@ app.get('/hot', function(req,res){
 
 
 app.get('/writeform',function(req,res){
-	if(req.session.sessionId)
-		res.render('writeform.html');
+	if(req.session.sessionId){
+		var query = client.query('SELECT * FROM board ORDER BY b_id DESC LIMIT ?, 10',[0],function(err, rows){
+			if(err) console.error('err', err);
+			
+			res.render('writeform',{
+				aaa:req.session.sessionId,
+				brows:rows,
+				length:rows[0].b_id
+				
+				});
+			});
+		}
 	else
 		res.redirect('/');
 });
@@ -353,12 +363,15 @@ app.post('/write',function(req,res){
 					console.error(err);
 					throw err;
 				}
-				else{
-					
-					res.send('<script>alert("sdlfksdjfisjflfkjsdi")</script>');
-				}
-				console.log(query);
-				
+				var query = client.query('SELECT * FROM board ORDER BY b_id DESC LIMIT ?, 10',[0],function(err, rows){
+					if(err) console.error('err', err);
+					res.render('main',{
+						aaa:req.session.sessionId,
+						brows:rows,
+						length:rows[0].b_id
+						
+					});
+				});
 			});
 
 });
