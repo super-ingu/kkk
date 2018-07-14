@@ -477,7 +477,6 @@ app.post('/users',function(req,res){ 			//이거 ㄱㄱ
 
         }
 
-        console.log(query);
 
     });
     res.send('<script>alert("'+uname+'님 환영합니다."); location.href="/";</script>');
