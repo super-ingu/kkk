@@ -93,6 +93,8 @@ app.post('/logincheck',function(req, res){
        var cnt = rows[0].cnt;
        var email = rows[0].u_email;
        if(cnt ===1 ){
+    	   
+    	   
     	   req.session.sessionId = email;
 //    	   res.cookie('auth', true);
 //    	   req.session.cookie.id=email;
