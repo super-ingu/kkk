@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>빰!</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    
+    
+    <style>
+
+        
+        
+        
+        
+        @font-face{font-family:'HoonWhitecatR';src: url(../../ttf/HoonWhitecatR.ttf) format('truetype');}
+        body{font-family:HoonWhitecatR;font-size:30px;}
+    </style>
+</head>
+    <body>
+ <h1 style="text-align: center"><%=aaa%>님 환영합니다.</h1>
+        
+    <header>
+        
+        <form method="get" action="/logout">
+      
+        <input type="submit" value="로그아웃"> 
+		</form>
+        
+    </header><br>
+    <nav border="1" style="float: left ;font-size:20px;margin-right: 50px">
+        <div>
+            <img src="./aaa.png"><br><br>
+          
+        </div><br><br>
+<input class="btn btn-success" type="button" value="글쓰기" OnClick="location.href='./writeform'"> 
+        
+        
+        <ul>
+            <a href="main"><li>전체 글 보기</li></a>
+            <a href="/hot"><li>인기 게시글</li></a>
+            <a href="/inform"><li>정보 게시글</li></a>
+            <li>잡담 게시글</li>
+            
+        </ul>
+        
+        </nav>
+        
+        
+        
+        <section  style="width: 80% ;float: right;margin-right: 5%">
+            
+            
+            <form method ="post" action="/update<%=brows[0].b_id%>">   
+            <p>제목<input type="text" name="title" value="<%=brows[0].b_title%>"><br>
+                내용<input type="text" name="content" value="<%=brows[0].b_content%>"> <br> 
+                <input class="btn btn-success" type="submit" value="수정"> 
+            </p>
+            </form>
+        </section>
+    <footer>
+    
+    </footer>
+</body>
+</html>

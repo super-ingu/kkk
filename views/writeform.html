@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head><title>�닠寃뚯엫</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    
+    
+    <style>
+
+        
+        
+        
+        
+        @font-face{font-family:'HoonWhitecatR';src: url(../../ttf/HoonWhitecatR.ttf) format('truetype');}
+        body{font-family:HoonWhitecatR;font-size:30px;}
+    </style>
+</head>
+    <body>
+    <h1 style="text-align: center"><%=aaa%>님 환영합니다.</h1>
+        
+    <header>
+        
+        <form method="get" action="/logout">
+      
+        <input type="submit" value="로그아웃"> 
+		</form>
+        
+    </header><br>
+    <nav border="1" style="float: left ;font-size:20px;margin-right: 50px">
+        <div>
+            <img src="./aaa.png"><br><br>
+          
+        </div><br><br>
+        
+<input class="btn btn-success" type="button" value="글쓰기" OnClick="location.href='./write.html'">
+        
+    </nav>
+        
+        
+        
+        <section  style="width: 80% ;float: right;margin-right: 5%">
+            
+    <h1>글 쓰 기</h1><br>
+            <form method="post" action="/write">
+                글 제목 : <input type="text" value="제목을 입력해주세요" name="title">
+        <textarea cols="70%" rows="10%" name="content"></textarea><br>
+               게시글 유형을 선택하세요:
+            
+            
+            
+            <select name="group">
+                <option>게시글 선택ㄱㄱ</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            
+            
+            
+                <input type="text" name="date" value="날짜를 입력ㄱ">
+                
+                <input type="submit" value="완료"> 
+            </form>
+
+            
+            
+        </section>
+    <footer>
+    
+    </footer>
+</body>
+</html>

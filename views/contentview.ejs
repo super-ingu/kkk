@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>빰!</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    
+    
+    <style>
+
+        
+        
+        
+        
+        @font-face{font-family:'HoonWhitecatR';src: url(../../ttf/HoonWhitecatR.ttf) format('truetype');}
+        body{font-family:HoonWhitecatR;font-size:30px;}
+    </style>
+</head>
+    <body>
+    <h1 style="text-align: center"><%=aaa%>님 환영합니다.</h1>
+        
+    <header>
+        
+        <form method="get" action="/logout">
+      
+        <input type="submit" value="로그아웃"> 
+		</form>
+        
+    </header><br>
+    <nav border="1" style="float: left ;font-size:20px;margin-right: 50px">
+        <div>
+            <img src="./aaa.png"><br><br>
+          
+        </div><br><br>
+<input class="btn btn-success" type="button" value="글쓰기" OnClick="location.href='./writeform'"> 
+
+        
+        
+        <ul>
+            <a href="main"><li>전체 글 보기</li></a>
+            <a href="/hot"><li>인기 게시글</li></a>
+            <a href="/inform"><li>정보 게시글</li></a>
+            <li>잡담 게시글</li>
+            
+        </ul>
+        
+        </nav>
+        
+        
+        
+        <section  style="width: 80% ;float: right;margin-right: 5%">
+  
+            
+            <H1><%=content.b_title%></H1><br>
+            <h3><%=content.b_content%></h3><br><br>
+
+            
+            <%if(aaa===content.b_writer){%>
+
+        <input class="btn btn-success" type="button" value="글 수정" OnClick="location.href='./update<%=content.b_id%>'"> 
+            <%}%>
+            <br><br><br><br><br>
+            <%if(crow0){%>
+                
+                <div>
+                <%=crow0.c_content%>
+                <a style="text-align:right">
+                <%=crow0.c_writer%></a>
+                </div><br>
+            <%}%>
+            <%if(crow1){%>
+
+                            <div>
+                            <%=crow1.c_content%>
+                            <a style="text-align:right">
+                            <%=crow1.c_writer%></a>
+                            </div><br>
+                        <%}%>
+            <%if(crow2){%>
+
+                            <div>
+                            <%=crow2.c_content%>
+                            <a style="text-align:right">
+                            <%=crow2.c_writer%></a>
+                            </div><br>
+                        <%}%>
+            <%if(crow3){%>
+
+                            <div>
+                            <%=crow3.c_content%>
+                            <a style="text-align:right">
+                            <%=crow3.c_writer%></a>
+                            </div><br>
+                        <%}%>
+            <%if(crow4){%>
+
+                            <div>
+                            <%=crow4.c_content%>
+                            <a style="text-align:right">
+                            <%=crow4.c_writer%></a>
+                            </div><br>
+                        <%}%>
+            <%if(crow5){%>
+
+                            <div>
+                            <%=crow5.c_content%>
+                            <a style="text-align:right">
+                            <%=crow5.c_writer%></a>
+                            </div><br>
+                        <%}%>
+            <%if(crow6){%>
+
+                            <div>
+                            <%=crow6.c_content%>
+                            <a style="text-align:right">
+                            <%=crow6.c_writer%></a>
+                            </div><br>
+                        <%}%>
+            <%if(crow7){%>
+
+                            <div>
+                            <%=crow7.c_content%>
+                            <a style="text-align:right">
+                            <%=crow7.c_writer%></a>
+                            </div><br>
+                        <%}%>
+
+            
+              <form method="post" action="/comment<%=content.b_id%>">
+                  <textarea cols="60%" rows="2%" name="comment"></textarea><br>    
+                <input type="submit" value="댓글 달기!"> 
+            </form>
+
+            
+            
+            
+        </section>
+    <footer>
+    
+    </footer>
+</body>
+</html>

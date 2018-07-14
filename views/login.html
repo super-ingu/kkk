@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head><title>로우그으이</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+       <meta charset="UTF-8">
+ 
+</head>
+
+
+
+
+   <body>
+        <h1>Log in</h1>
+        <form method ="post" action="/logincheck">   
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">ID</span>
+    </div>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name='id'>
+    </div>
+
+        <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">PW</span>
+      </div>
+      <input type="password" class="form-control" placeholder="Username" aria-label="Password" aria-describedby="basic-addon1" name="pw">
+    </div>
+
+            
+        <button class="btn btn-success">로그인</button>  
+       <button class="btn btn-dark" onclick=location.href="/sign_up">회원가입</button> 
+       </form>
+
+        
+          
+    </body>
+
+
+
+</html>
